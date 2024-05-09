@@ -1,0 +1,26 @@
+def minKnightMoves(x, y):
+    queue = [(0, 0)]
+    moves_count = 0
+    visited = {(0, 0)}
+    directions = ((-2, 1), (-1, 2), (1, 2), (2, 1), (2, -1), (1, -2), (-1, -2), (-2, -1))
+  
+    while queue:
+        for _ in range(len(queue)):
+            current_i, current_j = queue.pop(0)  
+            if (current_i, current_j) == (x, y):
+                return moves_count
+            for delta_i, delta_j in directions:
+                new_i, new_j = current_i + delta_i, current_j + delta_j
+                if (new_i, new_j) not in visited:
+                    visited.add((new_i, new_j))
+                    queue.append((new_i, new_j))
+        moves_count += 1
+  
+    return -1
+
+
+start_x = int(input("Enter the x-coordinate of the starting position: "))
+start_y = int(input("Enter the y-coordinate of the starting position: "))
+target_x = int(input("Enter the x-coordinate of the target position: "))
+target_y = int(input("Enter the y-coordinate of the target position: "))
+print("Minimum number of moves:", minKnightMoves(target_x, target_y))
