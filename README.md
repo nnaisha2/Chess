@@ -1,2 +1,2 @@
 # Chess
-Minimum number of moves a knight can can make in a chess game
+This project is a concise yet thorough exploration of a well-known question from the realm of chess strategy: "What's the minimum number of moves a knight can make in a chess game?" Over the course of the project, we delve into the complexities of the knight's notoriously unconventional movement patterns to algorithmically determine the most efficient path it can take around the chessboard.
